@@ -1260,7 +1260,7 @@ footer.site .f-made{width:100%;text-align:center;font-size:.8rem;color:rgba(251,
    Pega tu ID en META_PIXEL_ID (p. ej. '123456789012345').
    Si se deja vacío, no se carga nada: el banner sigue funcionando.
    ============================================================ */
-var META_PIXEL_ID = ''; // <-- pega aquí tu ID de Meta Pixel
+var META_PIXEL_ID = '2188981318311067'; // Meta Pixel — Luca te lo dice
 
 (function () {
   var banner = document.getElementById('cookieBanner');
@@ -1276,6 +1276,11 @@ var META_PIXEL_ID = ''; // <-- pega aquí tu ID de Meta Pixel
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', META_PIXEL_ID);
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Curso grupal italiano',
+      content_ids: ['curso-grupal'], content_type: 'product',
+      value: 88, currency: 'EUR'
+    });
   }
 
   function hide() { banner.classList.remove('show'); }
@@ -1303,6 +1308,36 @@ var META_PIXEL_ID = ''; // <-- pega aquí tu ID de Meta Pixel
   if (link) link.addEventListener('click', function (ev) {
     if (ev.metaKey || ev.ctrlKey) return; // dejar abrir la página en pestaña nueva
     ev.preventDefault(); show();
+  });
+})();
+</script>
+
+<script>
+/* ============================================================
+   META: InitiateCheckout al pulsar cualquier CTA de pago
+   Se dispara solo si el pixel está cargado (consentimiento dado).
+   Si no hay consentimiento, el enlace funciona con normalidad.
+   ============================================================ */
+(function () {
+  var ctas = document.querySelectorAll('[data-stripe]');
+  ctas.forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      // Sin consentimiento no hay pixel: dejar la navegación normal
+      if (typeof window.fbq !== 'function') return;
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey) return; // abrir en pestaña nueva
+      ev.preventDefault();
+      var url = a.getAttribute('href');
+      var navegado = false;
+      function ir() { if (navegado) return; navegado = true; window.location.href = url; }
+      try {
+        fbq('track', 'InitiateCheckout', {
+          content_ids: ['curso-grupal'], content_type: 'product',
+          value: 88, currency: 'EUR'
+        });
+      } catch (e) {}
+      setTimeout(ir, 350);   // da tiempo a enviar el evento antes de redirigir
+      setTimeout(ir, 1200);  // red de seguridad por si algo falla
+    });
   });
 })();
 </script>
