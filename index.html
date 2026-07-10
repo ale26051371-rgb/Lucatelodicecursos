@@ -79,7 +79,7 @@ section{padding:clamp(4rem,9vw,6.5rem) 0;position:relative}
 .tricolore{height:4px;background:linear-gradient(90deg,#1A6B4A 33.3%,#FBF7EF 33.3% 66.6%,#BE3A2B 66.6%)}
 .progress{
   position:fixed;top:0;left:0;width:100%;height:4px;z-index:120;pointer-events:none;
-  background:linear-gradient(90deg,var(--verde) 33.3%,var(--oro) 33.3% 66.6%,var(--rosso) 66.6%);
+  background:linear-gradient(90deg,var(--verde) 33.3%,#fff 33.3% 66.6%,var(--rosso) 66.6%);
   transform:scaleX(0);transform-origin:0 50%;
 }
 
@@ -327,7 +327,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;p
 }
 .schedule .panel::before{
   content:"";position:absolute;top:0;left:0;right:0;height:5px;
-  background:linear-gradient(90deg,var(--verde) 33.3%,var(--oro) 33.3% 66.6%,var(--rosso) 66.6%);
+  background:linear-gradient(90deg,var(--verde) 33.3%,#fff 33.3% 66.6%,var(--rosso) 66.6%);
 }
 .schedule .panel p{max-width:36rem;margin:0 auto 1rem;color:var(--ink-soft)}
 .schedule .panel p strong{color:var(--ink)}
@@ -536,7 +536,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;p
 }
 .cta-band .box::before{
   content:"";position:absolute;top:0;left:0;bottom:0;width:5px;
-  background:linear-gradient(180deg,var(--verde) 33.3%,var(--oro) 33.3% 66.6%,var(--rosso) 66.6%);
+  background:linear-gradient(180deg,var(--verde) 33.3%,#fff 33.3% 66.6%,var(--rosso) 66.6%);
 }
 .cta-band .txt{flex:1 1 300px;min-width:260px}
 .cta-band .txt h3{font-family:var(--font-display);font-weight:400;font-size:clamp(1.3rem,3vw,1.7rem);margin-bottom:.35rem;line-height:1.2}
@@ -570,6 +570,11 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;p
 .final .eyebrow{color:var(--oro);justify-content:center}
 .final h2{max-width:19ch;margin-inline:auto}
 .countdown-box{max-width:560px;margin:0 auto}
+.scarcity-box{max-width:560px;margin:0 auto;text-align:center}
+.scarcity{display:inline-flex;align-items:center;gap:1.1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:1.1rem 1.8rem}
+.scarcity .sc-num{font-family:var(--font-display);font-weight:400;font-size:clamp(3rem,9vw,4.2rem);color:var(--oro);line-height:1}
+.scarcity .sc-txt{text-align:left;font-size:1rem;color:rgba(251,247,239,.85);line-height:1.25}
+.scarcity .sc-txt b{color:#fff}
 .countdown{display:flex;justify-content:center;gap:.7rem}
 .cd-cell{
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;
@@ -763,18 +768,18 @@ footer.site .f-made{width:100%;text-align:center;font-size:.8rem;color:rgba(251,
       <p class="video-caption"><span class="hand">dale al play, te lo cuenta él mismo</span></p>
     </div>
 
-    <div class="offer-bar" data-countdown>
+    <div class="offer-bar">
       <div class="ob-cd">
-        <span class="ob-ic" aria-hidden="true"><svg class="ic"><use href="#i-clock"/></svg></span>
+        <span class="ob-ic" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
         <div>
-          <small class="js-cd-label">El precio sube en</small>
-          <b><span data-cd="h">72</span>:<span data-cd="m">00</span>:<span data-cd="s">00</span></b>
+          <small>Plazas limitadas</small>
+          <b>Solo 100</b>
         </div>
       </div>
       <div class="ob-div" aria-hidden="true"></div>
       <div class="ob-price">
-        <small>Precio especial</small>
-        <b><s class="js-old">96€</s> <span class="js-price">88€</span></b>
+        <small>Precio de lanzamiento</small>
+        <b><s>96€</s> 88€</b>
       </div>
       <div class="ob-div" aria-hidden="true"></div>
       <a class="btn shine" data-stripe href="https://buy.stripe.com/aFa9ATeWKfhddst3ei4Vy0Z">Quiero mi plaza <span class="arr">→</span></a>
@@ -853,12 +858,12 @@ footer.site .f-made{width:100%;text-align:center;font-size:.8rem;color:rgba(251,
         </span>
         <span class="d-new js-price">88€</span>
       </div>
-      <span class="d-save">te ahorras 8€ hoy</span>
+      <span class="d-save">te ahorras 8€</span>
       <p class="d-per">Son <b>8 clases en vivo</b> — menos de <b>11€ por clase</b>. Un café cuesta más.</p>
-      <div class="d-timer" data-countdown>
-        <svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>
-        <b><span data-cd="h">72</span>:<span data-cd="m">00</span>:<span data-cd="s">00</span></b>
-        <span class="js-cd-label">antes de volver a 96€</span>
+      <div class="d-timer">
+        <svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>
+        <b>Solo 100 plazas</b>
+        <span>y los grupos se llenan rápido</span>
       </div>
       <div class="final-cta" style="margin-top:0">
         <a class="btn big shine" data-stripe href="https://buy.stripe.com/aFa9ATeWKfhddst3ei4Vy0Z">Quiero mi plaza con descuento <span class="arr">→</span></a>
@@ -1059,16 +1064,16 @@ footer.site .f-made{width:100%;text-align:center;font-size:.8rem;color:rgba(251,
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Non sei solo</span>
-      <h2><span class="countup" data-count="140000">140.000</span> personas ya aprenden italiano con nosotros</h2>
+      <h2>Más de <span class="countup" data-count="2000">2.000</span> personas ya aprenden italiano con nosotros</h2>
     </div>
     <div class="social-badges reveal">
       <a class="badge-social" href="https://www.instagram.com/lucatelodice/" target="_blank" rel="noopener">
         <span class="bs-ico ig" aria-hidden="true"><svg class="ic" style="width:24px;height:24px;stroke:#fff"><use href="#i-ig"/></svg></span>
-        <span><b class="countup" data-count="68000">68.000</b><small>seguidores en Instagram</small></span>
+        <span><b class="countup" data-count="72000">72.000</b><small>seguidores en Instagram</small></span>
       </a>
       <a class="badge-social" href="https://www.tiktok.com/@lucatelodice" target="_blank" rel="noopener">
         <span class="bs-ico tk" aria-hidden="true"><svg class="ic fill" style="width:20px;height:20px;fill:#fff"><use href="#i-tt"/></svg></span>
-        <span><b class="countup" data-count="70000">70.000</b><small>seguidores en TikTok</small></span>
+        <span><b class="countup" data-count="76000">76.000</b><small>seguidores en TikTok</small></span>
       </a>
     </div>
     <!-- VIDEOS TESTIMONIO — YouTube vertical (no en listado), dominio nocookie.
@@ -1166,15 +1171,12 @@ footer.site .f-made{width:100%;text-align:center;font-size:.8rem;color:rgba(251,
       <h2>Llevas tiempo diciéndote que aprenderás italiano. Ahora es el momento.</h2>
     </div>
 
-    <div class="countdown-box reveal">
-      <div class="countdown" data-countdown aria-live="off">
-        <div class="cd-cell"><b data-cd="h">72</b><span>horas</span></div>
-        <div class="cd-sep" aria-hidden="true">:</div>
-        <div class="cd-cell"><b data-cd="m">00</b><span>min</span></div>
-        <div class="cd-sep" aria-hidden="true">:</div>
-        <div class="cd-cell"><b data-cd="s">00</b><span>seg</span></div>
+    <div class="scarcity-box reveal">
+      <div class="scarcity">
+        <span class="sc-num">100</span>
+        <span class="sc-txt">plazas en total<br><b>y no más</b></span>
       </div>
-      <p class="countdown-text js-cd-msg">Cuando el contador llegue a cero, el precio vuelve a <b>96€</b>.</p>
+      <p class="countdown-text">Grupos de máximo 6 personas. Cuando se llenan, se cierran las inscripciones.</p>
     </div>
 
     <div class="ticket reveal" aria-label="Tu billete: curso grupal de italiano">
@@ -1307,55 +1309,9 @@ var META_PIXEL_ID = ''; // <-- pega aquí tu ID de Meta Pixel
 
 <script>
 /* ============================================================
-   ENLACES DE PAGO (Stripe Payment Links)
-   El precio que ve el cliente lo define el Payment Link en Stripe.
-   STRIPE_LINK_88 → checkout con 88€ preconfigurado (enlace actual).
-   STRIPE_LINK_96 → pegar aquí el Payment Link de 96€ para que,
-   cuando el contador llegue a cero, todos los botones cambien
-   automáticamente al precio estándar. Si se deja vacío, los
-   botones siguen usando el enlace de 88€.
+   ENLACE DE PAGO (Stripe Payment Link)
+   El precio (88€) lo define el propio Payment Link en Stripe.
    ============================================================ */
-var STRIPE_LINK_88 = 'https://buy.stripe.com/aFa9ATeWKfhddst3ei4Vy0Z';
-var STRIPE_LINK_96 = '';
-
-/* ============================================================
-   CONTADOR REGRESIVO DE 72 HORAS
-   Ahora: arranca en 72h desde que se carga la página (hardcoded).
-   Para hacerlo dinámico: sustituir DEADLINE por una fecha fija,
-   p. ej. new Date('2026-07-14T00:00:00+02:00').getTime()
-   ============================================================ */
-(function () {
-  var DEADLINE = Date.now() + 72 * 60 * 60 * 1000;
-  var groups = document.querySelectorAll('[data-countdown]');
-  var expired = false;
-  function pad(n) { return String(n).padStart(2, '0'); }
-  function expire() {
-    expired = true;
-    document.querySelectorAll('.js-price').forEach(function (el) { el.textContent = '96€'; });
-    document.querySelectorAll('.js-old').forEach(function (el) { el.style.display = 'none'; });
-    var lbl = document.querySelector('.js-cd-label');
-    if (lbl) lbl.textContent = 'Precio actual';
-    var msg = document.querySelector('.js-cd-msg');
-    if (msg) msg.innerHTML = 'El precio especial ha terminado — precio actual: <b>96€</b>.';
-    if (STRIPE_LINK_96) {
-      document.querySelectorAll('a[data-stripe]').forEach(function (a) { a.href = STRIPE_LINK_96; });
-    }
-  }
-  function tick() {
-    var diff = Math.max(0, DEADLINE - Date.now());
-    var h = Math.floor(diff / 3600000);
-    var m = Math.floor((diff % 3600000) / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
-    groups.forEach(function (g) {
-      g.querySelector('[data-cd="h"]').textContent = pad(h);
-      g.querySelector('[data-cd="m"]').textContent = pad(m);
-      g.querySelector('[data-cd="s"]').textContent = pad(s);
-    });
-    if (diff === 0 && !expired) expire();
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
 
 /* Aparición suave al hacer scroll */
 (function () {
